@@ -1,0 +1,10 @@
+/* eslint-disable */
+{
+  "compilerOptions": {
+    "paths": {
+      "@/*": [
+        "./*"
+      ]
+    }
+  }
+}
