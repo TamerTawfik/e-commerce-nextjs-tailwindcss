@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import { siteConfig } from '@/config/site'
 import { SiteHeader } from '@/components/site-header'
+import { SiteFooter } from '@/components/site-footer'
 
 interface LayoutProps {
     children: React.ReactNode
@@ -19,6 +20,7 @@ export default function Layout({ title, children }: LayoutProps) {
             </Head>
             <SiteHeader />
             <main>{children}</main>
+            <SiteFooter />
         </>
     )
 }
