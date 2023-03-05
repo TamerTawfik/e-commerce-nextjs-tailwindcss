@@ -7,14 +7,13 @@ interface SiteConfig {
     links: {
         twitter: string
         github: string
-        instagram: string
     }
 }
 
 export const siteConfig: SiteConfig = {
-    name: " - Digital Marketplace",
+    name: "Digital Marketplace ",
     description:
-        "Beautifully designed Digital Marketplace built with Radix UI and Tailwind CSS.",
+        "Beautifully designed Digital Marketplace built for Freelancers.",
     mainNav: [
         {
             title: "Home",
@@ -24,6 +23,5 @@ export const siteConfig: SiteConfig = {
     links: {
         twitter: "",
         github: "",
-        instagram: "",
     },
 }
