@@ -12,9 +12,9 @@ interface SiteConfig {
 }
 
 export const siteConfig: SiteConfig = {
-    name: "E-Commerce Next.js Tailwindcss",
+    name: " - Digital Marketplace",
     description:
-        "Beautifully designed e-commerce app built with Radix UI and Tailwind CSS.",
+        "Beautifully designed Digital Marketplace built with Radix UI and Tailwind CSS.",
     mainNav: [
         {
             title: "Home",
