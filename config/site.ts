@@ -11,9 +11,9 @@ interface SiteConfig {
 }
 
 export const siteConfig: SiteConfig = {
-    name: "Digital Marketplace ",
+    name: "Storefront ",
     description:
-        "Beautifully designed Digital Marketplace built for Freelancers.",
+        "Beautifully designed Storefront built by React, Next JS, and Tailwindcss.",
     mainNav: [
         {
             title: "Home",
