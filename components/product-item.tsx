@@ -2,17 +2,11 @@
 import Link from 'next/link'
 import React from 'react'
 import { Button } from "@/components/ui/button"
-
+import type { Product } from '@/types/product'
 import { cn } from "@/lib/utils"
 
 interface CardProps extends React.HTMLAttributes<HTMLDivElement> {
-    product: {
-        slug: string
-        image: string
-        name: string
-        brand: string
-        price: number
-    }
+    product: Product
     disabled?: boolean
 }
 
