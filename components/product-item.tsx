@@ -18,7 +18,7 @@ export default function ProductItem({
     return (
         <div
             className={cn(
-                "group relative rounded-lg border border-slate-200 bg-transparent  text-slate-900 shadow-md transition-shadow hover:shadow-lg dark:border-slate-700 dark:text-slate-50",
+                "group relative rounded-lg border border-slate-200 bg-transparent  text-slate-900 shadow-md transition-shadow hover:shadow-lg",
                 disabled && "cursor-not-allowed opacity-60",
             )}>
             <Link href={`/product/${product.slug}`}>
