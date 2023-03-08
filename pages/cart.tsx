@@ -1,3 +1,4 @@
+// @ts-nocheck comment
 import Image from 'next/image';
 import Link from 'next/link';
 import React, { useContext } from 'react';
@@ -17,15 +18,20 @@ export default function CartScreen() {
         dispatch({ type: 'CART_REMOVE_ITEM', payload: item });
     };
 
+    const updateCartHandler = (item, qty) => {
+        const quantity = Number(qty);
+        dispatch({ type: 'CART_ADD_ITEM', payload: { ...item, quantity } });
+    };
+
     return (
         <Layout title="Shopping Cart">
-            <h1 className="mb-4 text-xl">Shopping Cart</h1>
+            <h1 className="my-4 py-4 pl-5 text-xl">Shopping Cart</h1>
             {cartItems.length === 0 ? (
-                <div>
+                <div className="py-4 pl-5">
                     Cart is empty. <Link href="/">Go shopping</Link>
                 </div>
             ) : (
-                    <div className="grid md:grid-cols-4 md:gap-5">
+                    <div className="grid md:grid-cols-4 md:gap-5 px-5">
                         <div className="overflow-x-auto md:col-span-3">
                             <table className="min-w-full ">
                                 <thead className="border-b">
@@ -51,7 +57,20 @@ export default function CartScreen() {
                                                         {item.name}
                                                 </Link>
                                             </td>
-                                            <td className="p-5 text-right">{item.quantity}</td>
+                                            <td className="p-5 text-right">
+                                                <select
+                                                    value={item.quantity}
+                                                    onChange={(e) =>
+                                                        updateCartHandler(item, e.target.value)
+                                                    }
+                                                >
+                                                    {[...Array(item.countInStock).keys()].map((x) => (
+                                                        <option key={x + 1} value={x + 1}>
+                                                            {x + 1}
+                                                        </option>
+                                                    ))}
+                                                </select>
+                                            </td>
                                             <td className="p-5 text-right">${item.price}</td>
                                             <td className="p-5 text-center">
                                                 <button onClick={() => removeItemHandler(item)}>
@@ -63,7 +82,7 @@ export default function CartScreen() {
                                 </tbody>
                             </table>
                         </div>
-                        <div className="card p-5">
+                        <div className="group relative rounded-lg border border-slate-200 bg-transparent  text-slate-900 shadow-md transition-shadow hover:shadow-lg p-5">
                             <ul>
                                 <li>
                                     <div className="pb-3 text-xl">
