@@ -7,13 +7,15 @@ interface SiteConfig {
     links: {
         twitter: string
         github: string
+        cart: string
+        login: string
     }
 }
 
 export const siteConfig: SiteConfig = {
     name: "Storefront ",
     description:
-        "Beautifully designed Storefront built by React, Next JS, and Tailwindcss.",
+        " | Beautifully designed Storefront built by React, Next JS, and Tailwindcss.",
     mainNav: [
         {
             title: "Home",
@@ -23,5 +25,7 @@ export const siteConfig: SiteConfig = {
     links: {
         twitter: "http://twitter.com/TamerTawfik_Me",
         github: "https://github.com/TamerTawfik",
+        cart: "/cart",
+        login: "login",
     },
 }
