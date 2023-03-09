@@ -3,6 +3,7 @@ import React from 'react'
 import { useForm } from 'react-hook-form'
 import Layout from '@/components/layout'
 import { Button } from '@/components/ui/button'
+import { Input } from '@/components/ui/input'
 
 export default function LoginScreen() {
     const {
@@ -22,7 +23,7 @@ export default function LoginScreen() {
                 <h1 className="mb-4 text-xl">Login</h1>
                 <div className="mb-4">
                     <label htmlFor="email">Email</label>
-                    <input
+                    <Input
                         type="email"
                         {...register('email', {
                             required: 'Please enter email',
@@ -31,26 +32,24 @@ export default function LoginScreen() {
                                 message: 'Please enter valid email',
                             },
                         })}
-                        className="w-full"
                         id="email"
                         autoFocus
-                    ></input>
+                    ></Input>
                     {errors.email && (
                         <div className="text-red-500">{errors.email.message}</div>
                     )}
                 </div>
                 <div className="mb-4">
                     <label htmlFor="password">Password</label>
-                    <input
+                    <Input
                         type="password"
                         {...register('password', {
                             required: 'Please enter password',
                             minLength: { value: 6, message: 'password is more than 5 chars' },
                         })}
-                        className="w-full"
                         id="password"
                         autoFocus
-                    ></input>
+                    ></Input>
                     {errors.password && (
                         <div className="text-red-500 ">{errors.password.message}</div>
                     )}
