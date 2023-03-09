@@ -4,6 +4,7 @@ import { useForm } from 'react-hook-form'
 import Layout from '@/components/layout'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
+import { Label } from '@/components/ui/label'
 
 export default function LoginScreen() {
     const {
@@ -22,7 +23,7 @@ export default function LoginScreen() {
             >
                 <h1 className="mb-4 text-xl">Login</h1>
                 <div className="mb-4">
-                    <label htmlFor="email">Email</label>
+                    <Label htmlFor="email">Email</Label>
                     <Input
                         type="email"
                         {...register('email', {
@@ -40,7 +41,7 @@ export default function LoginScreen() {
                     )}
                 </div>
                 <div className="mb-4">
-                    <label htmlFor="password">Password</label>
+                    <Label htmlFor="password">Password</Label>
                     <Input
                         type="password"
                         {...register('password', {
