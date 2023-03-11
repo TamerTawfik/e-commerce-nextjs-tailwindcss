@@ -1,26 +1,43 @@
 import Link from "next/link"
-import { useSession } from 'next-auth/react';
+import { signOut, useSession } from 'next-auth/react';
 
 import React, { useContext, useEffect, useState } from 'react';
 import { Store } from '@/utils/Store';
+import Cookies from 'js-cookie';
 
 import { siteConfig } from "@/config/site"
 import { Icons } from "@/components/icons"
 import { MainNav } from "@/components/main-nav"
 import { buttonVariants } from "@/components/ui/button"
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
+import {
+    DropdownMenu,
+    DropdownMenuContent,
+    DropdownMenuItem,
+    DropdownMenuLabel,
+    DropdownMenuSeparator,
+    DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu"
 
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 export function SiteHeader() {
+    const { state, dispatch } = useContext(Store);
+
     const { status, data: session } = useSession();
-    const { state } = useContext(Store);
     const { cart } = state;
     const [cartItemsCount, setCartItemsCount] = useState(0);
 
     useEffect(() => {
         setCartItemsCount(cart.cartItems.reduce((a, c) => a + c.quantity, 0));
     }, [cart.cartItems]);
+
+    const logoutClickHandler = () => {
+        Cookies.remove('cart');
+        dispatch({ type: 'CART_RESET' });
+        signOut({ callbackUrl: '/login' });
+    };
 
     return (
         <>
@@ -54,7 +71,38 @@ export function SiteHeader() {
                             {status === 'loading' ? (
                                 'Loading'
                             ) : session?.user ? (
-                                session.user.name
+                                <DropdownMenu>
+                                    <DropdownMenuTrigger asChild>
+                                        <Avatar>
+                                            <AvatarImage src="https://www.mtsolar.us/wp-content/uploads/2020/04/avatar-placeholder.png" alt="profile pic" />
+                                            <AvatarFallback>{session.user.name}</AvatarFallback>
+                                        </Avatar>
+
+                                    </DropdownMenuTrigger>
+                                    <DropdownMenuContent
+                                        align="start"
+                                        sideOffset={24}
+                                        className="w-[300px]"
+                                    >
+                                        <DropdownMenuLabel>
+                                            <span className="flex items-center">
+                                                Account
+                                            </span>
+                                        </DropdownMenuLabel>
+                                        <DropdownMenuSeparator />
+
+                                        <DropdownMenuItem asChild>
+                                            <Link href=''>Profile</Link>
+                                        </DropdownMenuItem>
+                                        <DropdownMenuItem asChild>
+                                            <Link href=''>Order History</Link>
+                                        </DropdownMenuItem>
+                                        <DropdownMenuItem asChild>
+                                            <Link href='' onClick={logoutClickHandler}>Logout</Link>
+                                        </DropdownMenuItem>
+                                    </DropdownMenuContent>
+                                </DropdownMenu>
+
                             ) : (
                                         <Link
                                             href={siteConfig.links.login}
