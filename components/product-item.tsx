@@ -14,6 +14,7 @@ interface CardProps extends React.HTMLAttributes<HTMLDivElement> {
 export default function ProductItem({
     product,
     disabled,
+    addToCartHandler,
 }: CardProps) {
     return (
         <div
@@ -34,9 +35,10 @@ export default function ProductItem({
                 </Link>
                 <p className="mb-2">{product.brand}</p>
                 <p>${product.price}</p>
-                <Button className="primary-button" type="button">
+                <Button className="primary-button" type="button"
+                    onClick={() => addToCartHandler(product)}>
                     Add to cart
-        </Button>
+                </Button>
             </div>
         </div>
     );
