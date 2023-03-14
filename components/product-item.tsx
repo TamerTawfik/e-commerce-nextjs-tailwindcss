@@ -7,6 +7,7 @@ import { cn } from "@/lib/utils"
 
 interface CardProps extends React.HTMLAttributes<HTMLDivElement> {
     product: Product
+    addToCartHandler: any
     disabled?: boolean
 }
 
