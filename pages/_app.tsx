@@ -5,6 +5,7 @@ import { useRouter } from 'next/router';
 
 import { StoreProvider } from '@/utils/Store'
 import { Fonts } from '@/components/fonts'
+import { PayPalScriptProvider } from '@paypal/react-paypal-js';
 
 import '@/styles/globals.css'
 
@@ -15,13 +16,15 @@ function App({ Component, pageProps: { session, ...pageProps } }: AppProps) {
       <Fonts />
       <SessionProvider session={session}>
         <StoreProvider>
-          {Component.auth ? (
-            <Auth>
-              <Component {...pageProps} />
-            </Auth>
-          ) : (
-              <Component {...pageProps} />
-            )}
+          <PayPalScriptProvider deferLoading={true}>
+            {Component.auth ? (
+              <Auth>
+                <Component {...pageProps} />
+              </Auth>
+            ) : (
+                <Component {...pageProps} />
+              )}
+          </PayPalScriptProvider>
         </StoreProvider>
       </SessionProvider>
     </>
