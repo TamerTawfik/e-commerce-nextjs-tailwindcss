@@ -155,7 +155,7 @@ function OrderScreen() {
                                     <h2 className="mb-2 text-lg">Payment Method</h2>
                                     <div>{paymentMethod}</div>
                                     {isPaid ? (
-                                        <div className="my-3 rounded-lg bg-green-100 p-3 text-red-700">Paid at {paidAt}</div>
+                                        <div className="my-3 rounded-lg bg-green-100 p-3 text-green-700">Paid at {paidAt}</div>
                                     ) : (
                                             <div className="my-3 rounded-lg bg-red-100 p-3 text-red-700">Not paid</div>
                                         )}

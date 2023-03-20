@@ -95,7 +95,7 @@ export function SiteHeader() {
                                             <Link href=''>Profile</Link>
                                         </DropdownMenuItem>
                                         <DropdownMenuItem asChild>
-                                            <Link href=''>Order History</Link>
+                                            <Link href='/order-history'>Order History</Link>
                                         </DropdownMenuItem>
                                         <DropdownMenuItem asChild>
                                             <Link href='' onClick={logoutClickHandler}>Logout</Link>
