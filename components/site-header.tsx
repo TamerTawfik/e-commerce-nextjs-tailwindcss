@@ -92,7 +92,7 @@ export function SiteHeader() {
                                         <DropdownMenuSeparator />
 
                                         <DropdownMenuItem asChild>
-                                            <Link href=''>Profile</Link>
+                                            <Link href='/profile'>Profile</Link>
                                         </DropdownMenuItem>
                                         <DropdownMenuItem asChild>
                                             <Link href='/order-history'>Order History</Link>
