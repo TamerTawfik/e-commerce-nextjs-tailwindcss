@@ -3,6 +3,7 @@ import axios from 'axios';
 import Link from 'next/link';
 import React, { useEffect, useReducer } from 'react';
 import Layout from '@/components/layout';
+import { Button } from '@/components/ui/button'
 import { getError } from '@/utils/error';
 
 function reducer(state, action) {
@@ -90,9 +91,11 @@ export default function AdminProdcutsScreen() {
                                                     <td className=" p-5 ">{product.countInStock}</td>
                                                     <td className=" p-5 ">{product.rating}</td>
                                                     <td className=" p-5 ">
-                                                        <Link href={`/admin/product/${product._id}`}>Edit</Link>
+                                                        <Link href={`/admin/product/${product._id}`}>
+                                                            <Button className='mr-3'> Edit</Button>
+                                                        </Link>
                                                         &nbsp;
-                                                        <button>Delete</button>
+                                                        <Button variant="destructive">Delete</Button>
                                                     </td>
                                                 </tr>
                                             ))}
