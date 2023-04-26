@@ -1,9 +1,9 @@
 <div align="center">
 
-  <h3 align="center">ECommerce Web Application.</h3>
+  <h3 align="center">E-Commerce Web Application.</h3>
 
   <p align="center">
-    Nextjs ECommerce.
+    Nextjs E-Commerce.
     <br />
     <a href="https://github.com/TamerTawfik/e-commerce-nextjs-tailwindcss"><strong>Explore the docs »</strong></a>
     <br />
@@ -46,9 +46,9 @@
 ## About The Project
 
 
-Based on tutorial by <a href="https://www.youtube.com/@CodingwithBasir"><strong>Code With Basir »</strong></a>
+Based on tutorial by  <a target="_blank" href="https://www.youtube.com/@CodingwithBasir"><strong> Code With Basir » </strong></a>
 
-I completed a tutorial on building a web application using React, Next JS and Tailwindcss. Although the tutorial was helpful in providing a basic understanding of these technologies, I realized that I wanted to take my learning to the next level by adding TypeScript support and integrating a UI library to make my application more visually appealing.
+I realized that I wanted to take my learning to the next level by adding TypeScript support and integrating a UI library to make my application more visually appealing.
 
 To accomplish this, I decided to use Shadcn UI, a modern and responsive UI library for Tailwindcss. I was impressed with the simplicity and ease of use of this library, as well as its extensive documentation and community support.
 
@@ -154,7 +154,7 @@ Distributed under the MIT License.
 
 Tamer Tawfik - [@TamerTawfik_Me](https://twitter.com/TamerTawfik_Me) 
 
-Project Link: [https://github.com/TamerTawfik/bookreviewers](https://github.com/TamerTawfik/bookreviewers)
+Project Link: [https://github.com/TamerTawfik/e-commerce-nextjs-tailwindcss](https://github.com/TamerTawfik/e-commerce-nextjs-tailwindcss)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
